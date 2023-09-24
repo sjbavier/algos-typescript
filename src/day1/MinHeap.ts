@@ -65,10 +65,13 @@ export default class MinHeap {
     private rightChild(idx: number): number {
         return idx * 2 + 2;
     }
+
     private leftChild(idx: number): number {
         return idx * 2 + 1;
     }
+
     insert(value: number): void {
+        //log(n) balanced tree height
         // append value using length
         this.data[this.length] = value;
         // then heapify up to bubble
@@ -76,10 +79,14 @@ export default class MinHeap {
         // update the heap length property
         this.length++;
     }
+
     private parent(idx: number) {
         return Math.floor((idx - 1) / 2);
     }
+
     delete(): number {
+        //log(n) balanced tree height
+
         // get the value out of the head of the min heap
         // take the last element in the array and put it in the heads position
         // then heapify down
