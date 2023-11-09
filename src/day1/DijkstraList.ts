@@ -1,4 +1,5 @@
 function hasUnvisited(seen: boolean[], dists: number[]): boolean {
+    // can use minHeap instead of seen arrayList for unvisited and improve run time from O(V^+E) to O(logV(V+E))
     return seen.some((s, i) => !s && dists[i] < Infinity); // since we fill dists with Infinities
 }
 function getLowestUnvisited(seen: boolean[], dists: number[]): number {
